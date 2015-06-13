@@ -20,9 +20,12 @@ public class Acervo {
 	public static ArrayList<Livro> Pesquisar(String titulo) {
 		ArrayList<Livro> retorno = new ArrayList<Livro>();
 		
-		for (Livro livros : acervo) {
-			if (livros.getTitulo() == titulo) 
-				retorno.add(livros);		
+		if(titulo.isEmpty())
+			return retorno;
+		
+		for (Livro livro : acervo) {
+			if (livro.getTitulo().toLowerCase().indexOf(titulo.toLowerCase()) > -1) 
+				retorno.add(livro);		
 		}
 		
 		return retorno;

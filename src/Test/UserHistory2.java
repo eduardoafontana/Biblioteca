@@ -11,8 +11,6 @@ import sistema.*;
 
 public class UserHistory2 {
 
-	
-	
 	@BeforeClass
 	public static void setUp() {
 		Livro livro1 = new Livro();
@@ -48,5 +46,10 @@ public class UserHistory2 {
 		ArrayList<Livro> listaDelivros = Acervo.Pesquisar("Livro");
 		assertEquals(listaDelivros.size(), 2);
 	}	
-
+	
+	@Test
+	public void PesquisarLivroNoAcervoEncontra2LivrosLowerCase() {
+		ArrayList<Livro> listaDelivros = Acervo.Pesquisar("livro");
+		assertEquals(listaDelivros.size(), 2);
+	}		
 }
